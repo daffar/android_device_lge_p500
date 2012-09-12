@@ -1427,12 +1427,14 @@ SND_DEVICE_HEADSET_STEREO = stereo audio + muted mic
 
 		} else if ((mMode == AudioSystem::MODE_IN_CALL) &&
 					(outputDevices & AudioSystem::DEVICE_OUT_WIRED_HEADSET)) {
+#ifdef HAVE_FM_RADIO
 				 if (mFmRadioEnabled) {
                 LOGI("Routing FM audio to Wired Headset\n");
                 new_snd_device = SND_DEVICE_FM_HEADSET;
                 new_post_proc_feature_mask = (EQ_ENABLE | RX_IIR_ENABLE);
                 new_post_proc_feature_mask &= (MBADRC_DISABLE | ADRC_DISABLE);
             } else	
+#endif
             	{
                 LOGI("Routing audio to Wired Headset 2a (Phone Call Path)\n");
                 new_snd_device = SND_DEVICE_HEADSET_HEADSET; //STEREO
