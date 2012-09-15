@@ -196,8 +196,7 @@ uint32_t AudioPolicyManager::getDeviceForStrategy(routing_strategy strategy, boo
             device2 = mAvailableOutputDevices & AudioSystem::DEVICE_OUT_EARPIECE;
         }
 
-        // device is DEVICE_OUT_SPEAKER if we come from case STRATEGY_SONIFICATION or
-        // STRATEGY_ENFORCED_AUDIBLE, 0 otherwise
+        // device is DEVICE_OUT_SPEAKER if we come from case STRATEGY_SONIFICATION
         device |= device2;
 
 #ifdef HAVE_FM_RADIO
