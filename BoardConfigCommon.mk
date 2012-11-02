@@ -67,6 +67,9 @@ BOARD_USE_SKIA_LCDTEXT := true
 BOARD_EGL_CFG := device/lge/p500/configs/egl.cfg
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DREFRESH_RATE=60
 
+# Qualcomm OMX for legacy devices
+COMMON_GLOBAL_CFLAGS += -DQCOM_LEGACY_OMX
+
 # Enable the GPS HAL & AMSS version to use for GPS
 BOARD_USES_QCOM_LIBRPC := true
 BOARD_USES_QCOM_GPS := true
